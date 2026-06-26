@@ -1536,93 +1536,153 @@
     </div>
   </footer>
 
-  <script>
-    // ===========================
-    // CAROUSEL
-    // ===========================
+document.addEventListener("DOMContentLoaded", () => {
 
-    document.addEventListener("DOMContentLoaded", () => {
+  // ===========================
+  // CAROUSEL
+  // ===========================
+  const images = document.querySelectorAll(".carousel-img");
+  const dots = document.querySelectorAll(".dot");
 
-      const images = document.querySelectorAll(".carousel-img");
-      const dots = document.querySelectorAll(".dot");
+  let currentIndex = 0;
+  let slideInterval;
 
-      let currentIndex = 0;
-      let slideInterval;
+  function showSlide(index) {
+    images.forEach(img => img.classList.remove("active"));
+    dots.forEach(dot => dot.classList.remove("active"));
 
-      function showSlide(index) {
+    if (images[index]) images[index].classList.add("active");
+    if (dots[index]) dots[index].classList.add("active");
+  }
 
-        images.forEach(img => {
-          img.classList.remove("active");
-        });
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % images.length;
+    showSlide(currentIndex);
+  }
 
-        dots.forEach(dot => {
-          dot.classList.remove("active");
-        });
+  function startCarousel() {
+    slideInterval = setInterval(nextSlide, 3000);
+  }
 
-        if (images[index]) {
-          images[index].classList.add("active");
-        }
+  function stopCarousel() {
+    clearInterval(slideInterval);
+  }
 
-        if (dots[index]) {
-          dots[index].classList.add("active");
-        }
-      }
+  window.currentSlide = function(index) {
+    currentIndex = index;
+    showSlide(currentIndex);
+    stopCarousel();
+    startCarousel();
+  };
 
-      function nextSlide() {
-        currentIndex = (currentIndex + 1) % images.length;
-        showSlide(currentIndex);
-      }
+  if (images.length > 0) {
+    showSlide(0);
+    startCarousel();
+  }
 
-      function startCarousel() {
-        slideInterval = setInterval(nextSlide, 3000);
-      }
+  const carousel = document.querySelector(".carousel");
+  if (carousel) {
+    carousel.addEventListener("mouseenter", stopCarousel);
+    carousel.addEventListener("mouseleave", startCarousel);
+  }
 
-      function stopCarousel() {
-        clearInterval(slideInterval);
-      }
+  // ===========================
+  // DARK MODE
+  // ===========================
+  const darkModeToggle = document.getElementById("darkModeToggle");
 
-      window.currentSlide = function(index) {
-        currentIndex = index;
-        showSlide(currentIndex);
+  if (localStorage.getItem("darkMode") === "enabled") {
+    document.body.classList.add("dark-mode");
+    if (darkModeToggle) darkModeToggle.textContent = "☀️";
+  }
 
-        stopCarousel();
-        startCarousel();
-      };
-
-      if (images.length > 0) {
-        showSlide(0);
-        startCarousel();
-      }
-
-      // Pause when hovering
-      const carousel = document.querySelector(".carousel");
-
-      if (carousel) {
-        carousel.addEventListener("mouseenter", stopCarousel);
-        carousel.addEventListener("mouseleave", startCarousel);
-      }
-
-      // ===========================
-      // DARK MODE
-      // ===========================
-
-      const darkModeToggle = document.getElementById("darkModeToggle");
-
-      if (localStorage.getItem("darkMode") === "enabled") {
-        document.body.classList.add("dark-mode");
-
-        if (darkModeToggle) {
-          darkModeToggle.textContent = "☀️";
-        }
-      }
-
-      if (darkModeToggle) {
-        darkModeToggle.addEventListener("click", () => {
-          document.body.classList.toggle("dark-mode");
-          // Logic for dark mode toggling continues here based on your rules...
-        });
+  if (darkModeToggle) {
+    darkModeToggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+      if (document.body.classList.contains("dark-mode")) {
+        localStorage.setItem("darkMode", "enabled");
+        darkModeToggle.textContent = "☀️";
+      } else {
+        localStorage.setItem("darkMode", "disabled");
+        darkModeToggle.textContent = "🌙";
       }
     });
+  }
+
+  // ===========================
+  // MULTI-PAGE SYSTEM (FIX)
+  // ===========================
+  const navLinks = document.querySelectorAll(".nav-links a, .footer-links a, .cta-button");
+  const sections = document.querySelectorAll(".page-section");
+  const welcomeHeader = document.getElementById("welcome");
+  const mobileMenu = document.getElementById("navLinks");
+  const hamburger = document.getElementById("hamburger");
+
+  function switchPage(targetId) {
+    // If clicking "Home" or "welcome", show the main header and hide multi-page sections
+    if (targetId === "#welcome") {
+      if (welcomeHeader) welcomeHeader.style.display = "flex";
+      sections.forEach(section => section.classList.remove("active-page"));
+    } else {
+      // Hide the welcome header if visiting another section
+      if (welcomeHeader) welcomeHeader.style.display = "none";
+      
+      // Find the targeted section and give it the active class
+      sections.forEach(section => {
+        if ("#" + section.id === targetId) {
+          section.classList.add("active-page");
+        } else {
+          section.classList.remove("active-page");
+        }
+      });
+    }
+
+    // Automatically highlight the active link in your navigation bar
+    document.querySelectorAll(".nav-link").forEach(link => {
+      if (link.getAttribute("href") === targetId) {
+        link.classList.add("active");
+      } else {
+        link.classList.remove("active");
+      }
+    });
+
+    // Close mobile hamburger menu automatically after clicking a link
+    if (mobileMenu && mobileMenu.classList.contains("active")) {
+      mobileMenu.classList.remove("active");
+      if (hamburger) hamburger.classList.remove("active");
+    }
+
+    // Scroll smoothly back to the top of the newly loaded page view
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  // Event listener setup for clicking navigation links
+  navLinks.forEach(link => {
+    link.addEventListener("click", (e) => {
+      const targetId = link.getAttribute("href");
+      if (targetId && targetId.startsWith("#")) {
+        e.preventDefault(); // Stop standard scrolling behavior
+        switchPage(targetId);
+      }
+    });
+  });
+
+  // Mobile Hamburger Toggle Behavior
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("active");
+      mobileMenu.classList.toggle("active");
+    });
+  }
+
+  // Run on page setup: Check URL hash or default directly to Home
+  const currentHash = window.location.hash;
+  if (currentHash && document.querySelector(currentHash)) {
+    switchPage(currentHash);
+  } else {
+    switchPage("#welcome");
+  }
+});
   </script>
 </body>
 </html>
