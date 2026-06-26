@@ -4,9 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Allan's Portfolio</title>
-  
   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+  
   <style>
     /* =========================
        PROFESSIONAL PORTFOLIO LAYOUT
@@ -47,16 +46,12 @@
       position:sticky;
       top:0;
       z-index:1000;
-
       display:flex;
       justify-content:space-between;
       align-items:center;
-
       padding:18px 60px;
-
       background:rgba(255,255,255,.95);
       backdrop-filter:blur(12px);
-
       border-bottom:1px solid #e2e8f0;
     }
 
@@ -65,10 +60,12 @@
       font-weight:700;
       color:var(--dark);
       transition:.3s;
+      text-decoration:none;
     }
 
     .logo:hover{
       color:var(--primary);
+      transform:scale(1.08);
     }
 
     .nav-links{
@@ -106,13 +103,10 @@
 
     #welcome{
       min-height:90vh;
-
       display:flex;
       justify-content:space-between;
       align-items:center;
-
       gap:60px;
-
       padding:80px 8%;
     }
 
@@ -157,12 +151,9 @@
     .carousel{
       width:360px;
       height:450px;
-
       border-radius:25px;
       overflow:hidden;
-
       position:relative;
-
       box-shadow:0 20px 40px rgba(0,0,0,.15);
     }
 
@@ -177,7 +168,6 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-
       opacity: 0;
       transition: opacity 0.6s ease;
     }
@@ -200,6 +190,7 @@
       height:12px;
       border-radius:50%;
       background:rgba(255,255,255,.5);
+      cursor:pointer;
     }
 
     .dot.active{
@@ -439,7 +430,6 @@
     ========================= */
 
     @media(max-width:900px){
-
       .navbar{
         flex-direction:column;
         gap:15px;
@@ -485,31 +475,13 @@
       position:sticky;
       top:0;
       z-index:1000;
-
       display:flex;
       justify-content:space-between;
       align-items:center;
-
       padding:18px 40px;
-
       background:rgba(255,255,255,0.9);
       backdrop-filter:blur(12px);
-
       border-bottom:1px solid rgba(0,0,0,0.08);
-    }
-
-    .logo{
-      font-size:28px;
-      font-weight:700;
-      text-decoration:none;
-      color:#333;
-
-      transition:.3s;
-    }
-
-    .logo:hover{
-      color:#87CEEB;
-      transform:scale(1.08);
     }
 
     .nav-link{
@@ -521,16 +493,12 @@
 
     .nav-link::after{
       content:'';
-
       position:absolute;
       left:0;
       bottom:-6px;
-
       width:0;
       height:3px;
-
       background:#87CEEB;
-
       transition:.3s;
     }
 
@@ -545,58 +513,38 @@
 
     .cta-button{
       padding:12px 24px;
-
       border-radius:30px;
-
-      background:linear-gradient(
-        135deg,
-        #87CEEB,
-        #4fa6c8
-      );
-
+      background:linear-gradient(135deg, #87CEEB, #4fa6c8);
       color:white;
       text-decoration:none;
-
       font-weight:600;
-
       transition:.3s;
     }
 
     .cta-button:hover{
       transform:translateY(-3px);
-
-      box-shadow:
-      0 8px 20px
-      rgba(135,206,235,.4);
+      box-shadow: 0 8px 20px rgba(135,206,235,.4);
     }
 
     .hamburger{
       display:none;
-
       flex-direction:column;
       gap:5px;
-
       background:none;
       border:none;
-
       cursor:pointer;
     }
 
     .hamburger span{
       width:25px;
       height:3px;
-
       background:#333;
-
       border-radius:3px;
-
       transition:.3s;
     }
 
     .hamburger.active span:nth-child(1){
-      transform:
-      rotate(45deg)
-      translate(7px,7px);
+      transform: rotate(45deg) translate(7px,7px);
     }
 
     .hamburger.active span:nth-child(2){
@@ -604,13 +552,10 @@
     }
 
     .hamburger.active span:nth-child(3){
-      transform:
-      rotate(-45deg)
-      translate(5px,-5px);
+      transform: rotate(-45deg) translate(5px,-5px);
     }
 
     @media(max-width:900px){
-
       .hamburger{
         display:flex;
       }
@@ -621,22 +566,14 @@
 
       .nav-links{
         position:absolute;
-
         top:75px;
         left:0;
-
         width:100%;
-
         flex-direction:column;
-
         background:white;
-
         max-height:0;
-
         overflow:hidden;
-
         transition:.4s;
-
         gap:0;
       }
 
@@ -662,9 +599,9 @@
       box-shadow:none;
       border:none;
     }
+
     #contact{
       text-align:center;
-
       padding:80px 20px;
     }
 
@@ -747,57 +684,36 @@
         margin:auto;
         padding:50px;
         text-align:center;
-
         background:rgba(255,255,255,.75);
         backdrop-filter:blur(20px);
-
         border:1px solid rgba(255,255,255,.3);
-
         border-radius:30px;
-
-        box-shadow:
-        0 20px 40px rgba(0,0,0,.08);
-
+        box-shadow: 0 20px 40px rgba(0,0,0,.08);
         transition:.4s ease;
     }
 
     .contact-card:hover{
         transform:translateY(-10px);
-        box-shadow:
-        0 30px 60px rgba(0,0,0,.12);
+        box-shadow: 0 30px 60px rgba(0,0,0,.12);
     }
 
     .contact-icon{
         width:90px;
         height:90px;
         margin:auto;
-
         display:flex;
         align-items:center;
         justify-content:center;
-
         font-size:40px;
-
         border-radius:50%;
-
-        background:linear-gradient(
-        135deg,
-        #87CEEB,
-        #5AB9EA
-        );
-
+        background:linear-gradient(135deg, #87CEEB, #5AB9EA);
         margin-bottom:25px;
-
         animation:floatIcon 4s ease infinite;
     }
 
     @keyframes floatIcon{
-        0%,100%{
-            transform:translateY(0);
-        }
-        50%{
-            transform:translateY(-10px);
-        }
+        0%,100%{ transform:translateY(0); }
+        50%{ transform:translateY(-10px); }
     }
 
     .contact-card h3{
@@ -819,15 +735,10 @@
         display:inline-flex;
         align-items:center;
         gap:10px;
-
         padding:10px 20px;
-
         background:#f5f5f5;
-
         border-radius:30px;
-
         margin-bottom:30px;
-
         font-size:.95rem;
         font-weight:500;
     }
@@ -835,24 +746,15 @@
     .status-dot{
         width:10px;
         height:10px;
-
         border-radius:50%;
-
         background:#22c55e;
-
         animation:pulseStatus 2s infinite;
     }
 
     @keyframes pulseStatus{
-        0%{
-            box-shadow:0 0 0 0 rgba(34,197,94,.5);
-        }
-        70%{
-            box-shadow:0 0 0 10px rgba(34,197,94,0);
-        }
-        100%{
-            box-shadow:0 0 0 0 rgba(34,197,94,0);
-        }
+        0%{ box-shadow:0 0 0 0 rgba(34,197,94,.5); }
+        70%{ box-shadow:0 0 0 10px rgba(34,197,94,0); }
+        100%{ box-shadow:0 0 0 0 rgba(34,197,94,0); }
     }
 
     /* ==========================
@@ -861,99 +763,29 @@
 
     .contact-btn{
         display:inline-block;
-
         padding:15px 35px;
-
-        background:linear-gradient(
-        135deg,
-        #87CEEB,
-        #5AB9EA
-        );
-
+        background:linear-gradient(135deg, #87CEEB, #5AB9EA);
         color:white;
         text-decoration:none;
         font-weight:600;
-
         border-radius:14px;
-
         transition:.35s ease;
-
         margin-bottom:25px;
     }
 
     .contact-btn:hover{
         transform:translateY(-4px);
-        box-shadow:
-        0 15px 25px rgba(135,206,235,.35);
+        box-shadow: 0 15px 25px rgba(135,206,235,.35);
     }
 
     /* ==========================
        EMAIL DISPLAY
-    ========================= */
+    ========================== */
 
     .email-display{
         color:#777;
         font-size:.95rem;
         word-break:break-word;
-    }
-
-    /* ==========================
-       DARK MODE
-    ========================== */
-
-    body.dark-mode .contact-header h2{
-        color:white;
-    }
-
-    body.dark-mode .contact-header p{
-        color:#cbd5e1;
-    }
-
-    body.dark-mode .contact-card{
-        background:rgba(25,25,25,.75);
-        border:1px solid rgba(255,255,255,.08);
-    }
-
-    body.dark-mode .contact-card h3{
-        color:white;
-    }
-
-    body.dark-mode .contact-card p{
-        color:#cbd5e1;
-    }
-
-    body.dark-mode .availability{
-        background:#2a2a2a;
-        color:white;
-    }
-
-    body.dark-mode .email-display{
-        color:#cbd5e1;
-    }
-
-    /* ==========================
-       MOBILE
-    ========================== */
-
-    @media(max-width:768px){
-
-        .contact-section{
-            padding:80px 20px;
-        }
-
-        .contact-card{
-            padding:35px 25px;
-        }
-
-        .contact-btn{
-            width:100%;
-        }
-
-        .contact-icon{
-            width:75px;
-            height:75px;
-            font-size:32px;
-        }
     }
 
     /* ==========================
@@ -1039,11 +871,7 @@
     }
 
     .fact-card{
-        background:linear-gradient(
-        135deg,
-        #87CEEB,
-        #5AB9EA
-        );
+        background:linear-gradient(135deg, #87CEEB, #5AB9EA);
         color:white;
         padding:35px 20px;
         border-radius:24px;
@@ -1125,8 +953,8 @@
     }
 
     /* ==========================
-       DARK MODE SECTION EXTRA
-    ========================== */
+       DARK MODE ADDITIONS
+    ========================= */
 
     body.dark-mode .value-card{
         background:#222;
@@ -1143,15 +971,9 @@
     body.dark-mode .section-header p{
         color:#cbd5e1;
     }
-
-    /* MULTI-SECTION PAGE SYSTEM RULES */
-
-    .page-section{
-      display:none !important;
-    }
-
-    .page-section.active-page{
-      display:block !important;
+    
+    body.dark-mode .nav-link {
+        color: white;
     }
   </style>
 </head>
@@ -1178,7 +1000,7 @@
       <li><a href="#stem" class="nav-link">Projects</a></li>
       <li><a href="#clubs" class="nav-link">Clubs</a></li>
       <li><a href="#contact" class="nav-link">Contact</a></li>
-    </ul>                                                                                                                                                                                                         
+    </ul>                                                                                                                    
 
     <a href="#contact" class="cta-button">Get In Touch</a>
 
@@ -1192,8 +1014,8 @@
       <h1>👋 Hello! My name is Allan</h1>
     </div>
     <p class="intro-text">
-    Grade 7 student • Aspiring Software Developer • STEM Enthusiast
-      </p>
+      Grade 7 student • Aspiring Software Developer • STEM Enthusiast
+    </p>
 
     <div class="carousel">
       <div class="carousel-container">
@@ -1231,16 +1053,12 @@
 
   <section id="challenges" class="page-section">
     <h2>Challenges and How I Overcame Them</h2>
-
     <p>Some challenges I have faced so far include:</p>
-
     <ul>
       <li>Understanding HTML syntax and how it works</li>
       <li>Learning different HTML functions and tags</li>
     </ul>
-
     <p>To overcome these challenges:</p>
-
     <ul>
       <li>I ask my teacher for help when I don’t understand something</li>
       <li>I review and revise what I have learned regularly</li>
@@ -1249,28 +1067,24 @@
 
   <section id="skills" class="page-section fade-in">
     <h2>Skills</h2>
-    
     <div class="card-container">
       <div class="card">
         <img src="https://i.postimg.cc/tR6VKvhF/HTML-icon.jpg" alt="HTML" class="skill-icon">
         <h3>HTML</h3>
         <p>Markup language for creating web page structure and content.</p>
       </div>
-
       <div class="card">
-        <img src="https://i.postimg.cc/vH1ZV4mm/CSS-icon.png" alt="CSS" class="skill-icon">
+        <img src="https://i.postimg.cc/7ZjsXrvG/CSS-icon.png" alt="CSS" class="skill-icon">
         <h3>CSS</h3>
         <p>Styling language for designing and formatting web pages.</p>
       </div>
-
       <div class="card">
-        <img src="https://i.postimg.cc/yYWkyfLH/JS-icon.jpg" alt="JavaScript" class="skill-icon">
+        <img src="https://i.postimg.cc/tJR27XPC/JS-icon.jpg" alt="JavaScript" class="skill-icon">
         <h3>JavaScript</h3>
         <p>Programming language for adding interactivity to websites.</p>
       </div>
-
       <div class="card">
-        <img src="https://i.postimg.cc/XYRGJwcq/Python-icon.jpg" alt="Python" class="skill-icon">
+        <img src="https://i.postimg.cc/qBQ1S3VN/Python-icon.jpg" alt="Python" class="skill-icon">
         <h3>Python</h3>
         <p>Versatile programming language. Mostly well-trained in this language.</p>
       </div>
@@ -1279,149 +1093,141 @@
 
   <section id="certificates" class="page-section fade-in">
     <h2>Certificates</h2>
-    
     <div class="certificates-container">
       <a href="https://i.postimg.cc/9Mz95Xsj/Coding-Adventure-Part-II-Certificate.png" target="_blank" class="cert-badge" title="Coding Adventure Part II">
         <img src="https://i.postimg.cc/h4Vfyznq/Coding-Adventure-Part-II-Certificate.png" alt="Coding Adventure Part II Certificate">
       </a>
-
       <a href="https://i.postimg.cc/NMVHgqwt/Coding-Adventure-Part-I-Certificate.png" target="_blank" class="cert-badge" title="Coding Adventure Part I">
         <img src="https://i.postimg.cc/mDR0T5PD/Coding-Adventure-Part-I-Certificate.png" alt="Coding Adventure Part I Certificate">
       </a>
-
       <a href="https://i.postimg.cc/fLF9wnhd/Coding-Adventure-Part-III-Certificate.png" target="_blank" class="cert-badge" title="Coding Adventure Part III">
         <img src="https://i.postimg.cc/9fBLYFfM/Coding-Adventure-Part-III-Certificate.png" alt="Coding Adventure Part III Certificate">
       </a>
-
       <a href="https://i.postimg.cc/kGbtG1nW/Linus-the-Lemur-Certificate.png" target="_blank" class="cert-badge" title="Linus the Lemur">
         <img src="https://i.postimg.cc/tg95JQzX/Linus-the-Lemur-Certificate.png" alt="Linus the Lemur Certificate">
       </a>
-
       <a href="https://i.postimg.cc/907q08WL/Code-Monkey-Jr-Sequencing-And-Loops-Certificate.png" target="_blank" class="cert-badge" title="Code Monkey Jr Sequencing And Loops">
         <img src="https://i.postimg.cc/ZKrs5chd/Code-Monkey-Jr-Sequencing-And-Loops-Certificate.png" alt="Code Monkey Jr Sequencing And Loops Certificate">
       </a>
-
       <a href="https://i.postimg.cc/pyM5FfTc/Code-Monkey-Jr-Advanced-Sequencing-And-Loops-Certificate.png" target="_blank" class="cert-badge" title="Code Monkey Jr Advanced Sequencing And Loops">
         <img src="https://i.postimg.cc/FsgG4Hy4/Code-Monkey-Jr-Advanced-Sequencing-And-Loops-Certificate.png" alt="Code Monkey Jr Advanced Sequencing And Loops Certificate">
       </a>
-
       <a href="https://i.postimg.cc/0r1KwYj2/Beaver-Achiever-Sequencing-Simple-Loops-Certificate.png" target="_blank" class="cert-badge" title="Beaver Achiever Sequencing Simple Loops">
         <img src="https://i.postimg.cc/NfY7pvWp/Beaver-Achiever-Sequencing-Simple-Loops-Certificate.png" alt="Beaver Achiever Sequencing Simple Loops Certificate">
       </a>
-
       <a href="https://i.postimg.cc/z3YHgCvb/Beaver-Achiever-Conditional-Loops-Certificate.png" target="_blank" class="cert-badge" title="Beaver Achiever Conditional Loops">
         <img src="https://i.postimg.cc/2yYvcnXf/Beaver-Achiever-Conditional-Loops-Certificate.png" alt="Beaver Achiever Conditional Loops Certificate">
       </a>
-
       <a href="https://i.postimg.cc/nVCgF6mt/Coding-Adventure-Part-I-Skill-Mode-Certificate.png" target="_blank" class="cert-badge" title="Coding Adventure Part I Skill Mode">
         <img src="https://i.postimg.cc/GmtD5Lzp/Coding-Adventure-Part-I-Skill-Mode-Certificate.png" alt="Coding Adventure Part I Skill Mode Certificate">
       </a>
-
       <a href="https://i.postimg.cc/596T4ZzY/Coding-Adventure-Part-II-Skill-Mode-Certificate.png" target="_blank" class="cert-badge" title="Coding Adventure Part II Skill Mode">
         <img src="https://i.postimg.cc/hjvxHSSS/Coding-Adventure-Part-II-Skill-Mode-Certificate.png" alt="Coding Adventure Part II Skill Mode Certificate">
       </a>
-
       <a href="https://i.postimg.cc/3rV6dnj2/Coding-Adventure-Part-III-Skill-Mode-Certificate.png" target="_blank" class="cert-badge" title="Coding Adventure Part III Skill Mode">
         <img src="https://i.postimg.cc/mrXVcpkb/Coding-Adventure-Part-III-Skill-Mode-Certificate.png" alt="Coding Adventure Part III Skill Mode Certificate">
       </a>
-
       <a href="https://i.postimg.cc/KvTWLBJX/Banana-Tales-Part-I-Certificate.png" target="_blank" class="cert-badge" title="Banana Tales Part I">
         <img src="https://i.postimg.cc/0NvSnY6h/Banana-Tales-Part-I-Certificate.png" alt="Banana Tales Part I Certificate">
       </a>
-
       <a href="https://i.postimg.cc/Gm15jt5m/Banana-Tales-Part-II-Certificate.png" target="_blank" class="cert-badge" title="Banana Tales Part II">
         <img src="https://i.postimg.cc/9Qf74m7C/Banana-Tales-Part-II-Certificate.png" alt="Banana Tales Part II Certificate">
       </a>
     </div>
   </section>
-  
+
   <section id="values" class="page-section values-section fade-in">
     <div class="section-header">
       <span class="section-tag">VALUES</span>
       <h2>What I Believe In</h2>
       <p>The principles that guide my learning and personal growth.</p>
     </div>
-
     <div class="values-grid">
       <div class="value-card">
         <h3>Creativity</h3>
         <p>I enjoy turning ideas into projects and finding creative solutions to challenges.</p>
       </div>
-
       <div class="value-card">
         <h3>Growth</h3>
         <p>Every project teaches me something new, and I always look for ways to improve my skills.</p>
       </div>
-
       <div class="value-card">
         <h3>Teamwork</h3>
         <p>Working with others helps me learn different perspectives and achieve better results.</p>
       </div>
-
       <div class="value-card">
         <h3>Responsibility</h3>
         <p>I take pride in completing tasks with dedication and giving my best effort.</p>
       </div>
     </div>
   </section>
-  
+
   <section id="fun-facts" class="page-section funfacts-section fade-in">
     <div class="section-header">
       <span class="section-tag">FUN FACTS</span>
       <h2>Quick Facts About Me</h2>
     </div>
-
     <div class="facts-grid">
       <div class="fact-card">
         <h3>Favorite Subject</h3>
         <p>STEM</p>
       </div>
-
       <div class="fact-card">
         <h3>Favorite Activity</h3>
         <p>Building Websites</p>
       </div>
-
       <div class="fact-card">
         <h3>Favorite Skill</h3>
         <p>Problem Solving</p>
       </div>
-
       <div class="fact-card">
         <h3>Future Goal</h3>
         <p>Software Engineer</p>
       </div>
     </div>
   </section>
-  
+
   <section id="stem" class="page-section fade-in">
     <h2>STEM Projects</h2>
-    <p class="section-intro" style="text-align: center; margin-bottom: 30px; color: var(--light);">
+    <p class="section-intro">
       STEM activities help me apply science, technology, engineering, and mathematics to practical challenges.
     </p>
-
     <div class="card-container">
       <div class="card slide-left">
-        <img class="stem-img" src="https://i.postimg.cc/3wPQNMxD/Copilot-20260331-131019.png" alt="Bio Habitat" style="width:100%; height:220px; object-fit:cover;">
+        <img class="stem-img" src="https://i.postimg.cc/3wPQNMxD/Copilot-20260331-131019.png" alt="Bio Habitat">
         <h3>Bio Habitat Project</h3>
         <p>A sustainable bird habitat designed to support biodiversity and environmental awareness.</p>
       </div>
-
       <div class="card slide-right">
-        <img class="stem-img" src="https://i.postimg.cc/44822xfq/1000469974.jpg" alt="Smoke Detector" style="width:100%; height:220px; object-fit:cover;">
+        <img class="stem-img" src="https://i.postimg.cc/44822xfq/1000469974.jpg" alt="Smoke Detector">
         <h3>Smoke Detection System</h3>
         <p>An engineering project designed to improve fire safety and increase awareness in communities.</p>
       </div>
     </div>
   </section>
-       
+      
   <section id="clubs" class="page-section fade-in">
     <h2>Clubs</h2>
     <div class="card-container">
       <div class="card slide-left">
-        <img src="https://i.postimg.cc/T2yvzJfN/images.jpg" alt="Coding Club" style="width:100%; height:220px; object-fit:cover;">
+        <img src="https://i.postimg.cc/T2yvzJfN/images.jpg" alt="Coding Club">
         <h3>Coding Club</h3>
         <p>Developing programming skills and exploring new technologies.</p>
+      </div>
+      <div class="card slide-right">
+        <img src="https://i.postimg.cc/brqbtwy1/GPxc906WEAESts-C.jpg" alt="Swimming">
+        <h3>Swimming for Rescue</h3>
+        <p>Building confidence, teamwork, and life-saving abilities.</p>
+      </div>
+      <div class="card slide-left">
+        <img src="https://i.postimg.cc/QMXrvLdY/1000589848.jpg" alt="Quantum Club">
+        <h3>Quantum Club</h3>
+        <p>Learning engineering concepts, electricity, and safety awareness.</p>
+      </div>
+      <div class="card slide-right">
+        <img src="https://i.postimg.cc/mk4q1C1j/334A0913.jpg" alt="International Affairs">
+        <h3>International Affairs</h3>
+        <p>Exploring global cultures and strengthening communication skills.</p>
       </div>
     </div>
   </section>
@@ -1429,46 +1235,47 @@
   <section id="contact" class="page-section contact-section fade-in">
     <div class="contact-wrapper">
       <div class="contact-header">
-        <span class="contact-tag">SAY HELLO</span>
-        <h2>Contact Details</h2>
-        <p>Have questions or want to collaborate on a coding project? Drop me an email!</p>
+        <span class="contact-tag">CONTACT</span>
+        <h2>Let's Work Together</h2>
+        <p>
+          Have a question, project idea, or collaboration opportunity?
+          Feel free to reach out. I'm always excited to connect and learn from others.
+        </p>
       </div>
       <div class="contact-card">
         <div class="contact-icon">✉️</div>
-        <h3>Email Address</h3>
+        <h3>Get In Touch</h3>
+        <p>I typically respond within 24 hours.</p>
         <div class="availability">
-          <span class="status-dot"></span> Available for Web Projects
+          <span class="status-dot"></span>Available for collaboration
         </div>
-        <p class="email-display">allan@example.com</p>
+        <a href="mailto:kwizera.allan31@ntare-louisenlund.org" class="contact-btn">Send Email</a>
+        <div class="email-display">kwizera.allan31@ntare-louisenlund.org</div>
       </div>
     </div>
   </section>
-
+    
   <footer class="footer">
     <div class="footer-content">
-      <h2>Allan's Portfolio</h2>
-      <p>Grade 7 Student & Aspiring Software Developer</p>
+      <h2>Kwizera Allan</h2>
+      <p>Grade 7 Student • Technology Enthusiast • Future Software Engineer</p>
       <div class="footer-links">
         <a href="#welcome">Home</a>
-        <a href="#intro">Introduction</a>
-        <a href="#goals">Goals</a>
-        <a href="#skills">Skills</a>
         <a href="#stem">Projects</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#contact">Contact</a>
       </div>
-      <div class="copyright">
-        &copy; 2026 Allan. Powered by pure curiosity and HTML/CSS/JS.
-      </div>
+      <a href="mailto:kwizera.allan31@ntare-louisenlund.org" class="footer-email">kwizera.allan31@ntare-louisenlund.org</a>
+      <p class="copyright">© 2026 Kwizera Allan. All Rights Reserved.</p>
     </div>
   </footer>
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-
-      // ===========================
-      // 1. CAROUSEL IMAGES
-      // ===========================
+      // Carousel Initialization
       const images = document.querySelectorAll(".carousel-img");
       const dots = document.querySelectorAll(".dot");
+
       let currentIndex = 0;
       let slideInterval;
 
@@ -1493,7 +1300,6 @@
         clearInterval(slideInterval);
       }
 
-      // Hook up indicators clicking globally
       window.currentSlide = function(index) {
         currentIndex = index;
         showSlide(currentIndex);
@@ -1506,105 +1312,56 @@
         startCarousel();
       }
 
-      // ===========================
-      // 2. DARK MODE TOGGLE
-      // ===========================
-      const darkModeToggle = document.getElementById("darkModeToggle");
-
-      if (localStorage.getItem("darkMode") === "enabled") {
-        document.body.classList.add("dark-mode");
-        if (darkModeToggle) darkModeToggle.textContent = "☀️";
+      const carousel = document.querySelector(".carousel");
+      if (carousel) {
+        carousel.addEventListener("mouseenter", stopCarousel);
+        carousel.addEventListener("mouseleave", startCarousel);
       }
 
+      // Dark Mode Logic
+      const darkModeToggle = document.getElementById("darkModeToggle");
       if (darkModeToggle) {
         darkModeToggle.addEventListener("click", () => {
           document.body.classList.toggle("dark-mode");
           if (document.body.classList.contains("dark-mode")) {
-            localStorage.setItem("darkMode", "enabled");
             darkModeToggle.textContent = "☀️";
           } else {
-            localStorage.setItem("darkMode", "disabled");
             darkModeToggle.textContent = "🌙";
           }
         });
       }
 
-      // ===========================
-      // 3. MULTI-PAGE ROUTER (THE FIX)
-      // ===========================
-      const navLinks = document.querySelectorAll(".nav-links a, .footer-links a, .cta-button, .logo");
-      const sections = document.querySelectorAll(".page-section");
-      const welcomeHeader = document.getElementById("welcome");
-      const mobileMenu = document.getElementById("navLinks");
+      // Mobile Hamburger Toggle Setup
       const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("navLinks");
 
-      function switchPage(targetId) {
-        // If clicking back to Home layout
-        if (targetId === "#welcome") {
-          if (welcomeHeader) welcomeHeader.style.display = "flex";
-          sections.forEach(section => section.classList.remove("active-page"));
-        } else {
-          // Hide landing carousel hero view
-          if (welcomeHeader) welcomeHeader.style.display = "none";
-          
-          // Switch display on requested ID
-          sections.forEach(section => {
-            if ("#" + section.id === targetId) {
-              section.classList.add("active-page");
-              section.classList.add("visible"); // trigger animation classes safely
-            } else {
-              section.classList.remove("active-page");
-            }
-          });
-        }
-
-        // Underline navigation focus switcher logic
-        document.querySelectorAll(".nav-link").forEach(link => {
-          if (link.getAttribute("href") === targetId) {
-            link.classList.add("active");
-          } else {
-            link.classList.remove("active");
-          }
-        });
-
-        // Toggle drop mobile menu down to closed if opened
-        if (mobileMenu && mobileMenu.classList.contains("active")) {
-          mobileMenu.classList.remove("active");
-          if (hamburger) hamburger.classList.remove("active");
-        }
-
-        // Standard reload top view scroll
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }
-
-      // Attach click intercept triggers on navigation anchors
-      navLinks.forEach(link => {
-        link.addEventListener("click", (e) => {
-          const targetId = link.getAttribute("href");
-          if (targetId && targetId.startsWith("#")) {
-            e.preventDefault();
-            switchPage(targetId);
-          }
-        });
-      });
-
-      // Mobile Hamburger Toggle
-      if (hamburger && mobileMenu) {
+      if (hamburger && navLinks) {
         hamburger.addEventListener("click", () => {
           hamburger.classList.toggle("active");
-          mobileMenu.classList.toggle("active");
-          
-          // Make sure it expands cleanly by adding inline sizing override
-          if(mobileMenu.classList.contains("active")) {
-             mobileMenu.style.maxHeight = "500px";
-          } else {
-             mobileMenu.style.maxHeight = "0";
-          }
+          navLinks.classList.toggle("active");
+        });
+
+        document.querySelectorAll(".nav-link").forEach(link => {
+          link.addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            navLinks.classList.remove("active");
+          });
         });
       }
 
-      // Set default landing page display safely 
-      switchPage("#welcome");
+      // Simple Scroll Reveal triggers for fade-in elements
+      const fadeElements = document.querySelectorAll('.fade-in, .slide-left, .slide-right');
+      const checkVisibility = () => {
+        fadeElements.forEach(el => {
+          const rect = el.getBoundingClientRect();
+          if(rect.top < window.innerHeight - 50) {
+            el.classList.add('visible');
+          }
+        });
+      };
+      
+      window.addEventListener('scroll', checkVisibility);
+      checkVisibility(); // run once on initialization
     });
   </script>
 </body>
